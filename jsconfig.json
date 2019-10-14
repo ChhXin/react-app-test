@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@api": ["./src/api"],
+      "@common": ["./src/components"],
+      "pages": ["./src/pages"],
+      "@images": ["./src/images"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
