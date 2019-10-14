@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import { ConfigProvider } from "antd";
@@ -14,10 +14,11 @@ function App() {
             exact
             path="/dashboard"
             component={Loadable({
-              loader: () => import("pages/dashboard"),
+              loader: () => import("@pages/dashboard"),
               loading: () => <Spin />
             })}
           />
+          <Redirect to="/dashboard" />
         </Switch>
       </ConfigProvider>
     </BrowserRouter>

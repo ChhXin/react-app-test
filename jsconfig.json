@@ -7,12 +7,11 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@api": ["./src/api"],
+      "@pages": ["./src/pages"],
       "@common": ["./src/components"],
-      "pages": ["./src/pages"],
-      "@images": ["./src/images"]
+      "@images": ["./src/images"],
+      "@api": ["./src/api"]
     }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "build", "pubilc"]
 }

@@ -22,10 +22,9 @@ module.exports = override(
   }),
   //配置简化路径
   addWebpackAlias({
-    "@": path.resolve(__dirname, "src"),
-    "@api": path.resolve(__dirname, "src/api"),
+    "@pages": path.resolve(__dirname, "src/pages"),
     "@common": path.resolve(__dirname, "src/components"),
-    pages: path.resolve(__dirname, "src/pages"),
-    "@images": path.resolve(__dirname, "src/images")
+    "@images": path.resolve(__dirname, "src/images"),
+    "@api": path.resolve(__dirname, "src/api")
   })
 );
