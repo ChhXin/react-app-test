@@ -1,10 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Loadable from "react-loadable";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import { ConfigProvider } from "antd";
 import { Spin } from "antd";
 
+const Dashboard = lazy(() => import("@pages/dashboard"));
 function App() {
   return (
     <BrowserRouter>
@@ -13,10 +13,11 @@ function App() {
           <Route
             exact
             path="/dashboard"
-            component={Loadable({
-              loader: () => import("@pages/dashboard"),
-              loading: () => <Spin />
-            })}
+            component={props => (
+              <Suspense fallback={<Spin />}>
+                <Dashboard {...props} />
+              </Suspense>
+            )}
           />
           <Redirect to="/dashboard" />
         </Switch>
